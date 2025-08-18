@@ -1,0 +1,24 @@
+[project]
+name = "nirfasteruff"
+version = "1.0.0"
+dependencies = []
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.setuptools.packages.find]
+where = ["."]
