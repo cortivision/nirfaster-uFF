@@ -2,7 +2,7 @@
 
 Public repository containing the micro (fast and furious) version of NIRFASTer
 
-- Version: 1.2.0
+- Version: 1.2.1
 - Authors: Jiaming Cao (University of Macau), MILab@UoB
 - License: BSD
 
@@ -42,9 +42,11 @@ The full version of the package can be found at: https://github.com/milabuob/nir
 
 ## Citation
 
-A paper on this package is currently in preperation. For now, if you are using our toolbox, please cite the original NIRFAST paper:
+If you are using our toolbox, please cite our papers:
 
-Dehghani, Hamid, et al. "Near infrared optical tomography using NIRFAST: Algorithm for numerical model and image reconstruction." Communications in numerical methods in engineering 25.6 (2009): 711-732. doi:10.1002/cnm.1162
+1. Cao, Jiaming, et al. “NIRFASTerFF: An accessible, cross-platform python package for fast photon modeling.” *Journal of Biomedical Optics*, vol. 30, no. 11, 2025, https://doi.org/10.1117/1.jbo.30.11.115001.
+
+2. Dehghani, Hamid, et al. “Near Infrared Optical Tomography using NIRFAST: Algorithm for numerical model and image reconstruction.” *Communications in Numerical Methods in Engineering*, vol. 25, no. 6, 2008, pp. 711–732, https://doi.org/10.1002/cnm.1162.
 
 ## The demos
 
@@ -60,6 +62,10 @@ The head model is adapted from the examples in the NeuroDOT toolbox: https://git
 - Fluence calculation (CW/FD)
 
 ## Changelog
+
+1.2.1
+
+- Fixed a bug in mesh.save_nirfast (all mesh types), where large numbers in mesh.elements were incorrectly truncated. 
 
 1.2.0
 

@@ -28,7 +28,7 @@
    :template: custom-module-template.rst                 
    :recursive:
 
-   nirfasteruff.nirfasteruff
-   nirfasteruff.nirfasteruff_cpu
-   nirfasteruff.nirfasteruff_cuda
+   nirfasteruff
+   nirfasteruff_cpu
+   nirfasteruff_cuda
 

@@ -3,22 +3,24 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nirfasteruff.nirfasteruff_cpu.get_field_CW &mdash; NIRFASTerUFF 1.2.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+  <title>nirfasteruff.nirfasteruff_cpu.get_field_CW &mdash; NIRFASTerUFF 1.2.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=6efca38a"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/documentation_options.js?v=ca842793"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nirfasteruff.nirfasteruff_cpu.get_field_FD" href="nirfasteruff.nirfasteruff_cpu.get_field_FD.html" />
+    <link rel="prev" title="nirfasteruff.nirfasteruff_cpu.gen_mass_matrix" href="nirfasteruff.nirfasteruff_cpu.gen_mass_matrix.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,8 +42,26 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="nirfasteruff.html">nirfasteruff</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="nirfasteruff.html">nirfasteruff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nirfasteruff.nirfasteruff.html">nirfasteruff.nirfasteruff</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.html">nirfasteruff.nirfasteruff_cpu</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.ele_area.html">nirfasteruff.nirfasteruff_cpu.ele_area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.gen_mass_matrix.html">nirfasteruff.nirfasteruff_cpu.gen_mass_matrix</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">nirfasteruff.nirfasteruff_cpu.get_field_CW</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nirfasteruff.nirfasteruff_cpu.get_field_CW"><code class="docutils literal notranslate"><span class="pre">get_field_CW()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.get_field_FD.html">nirfasteruff.nirfasteruff_cpu.get_field_FD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.isCUDA.html">nirfasteruff.nirfasteruff_cpu.isCUDA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.mesh_support.html">nirfasteruff.nirfasteruff_cpu.mesh_support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.pointLocation.html">nirfasteruff.nirfasteruff_cpu.pointLocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nirfasteruff.nirfasteruff_cpu.ConvergenceInfoCPU.html">nirfasteruff.nirfasteruff_cpu.ConvergenceInfoCPU</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nirfasteruff.nirfasteruff_cuda.html">nirfasteruff.nirfasteruff_cuda</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -58,6 +78,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="nirfasteruff.html">nirfasteruff</a></li>
+          <li class="breadcrumb-item"><a href="nirfasteruff.nirfasteruff_cpu.html">nirfasteruff.nirfasteruff_cpu</a></li>
       <li class="breadcrumb-item active">nirfasteruff.nirfasteruff_cpu.get_field_CW</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/_autosummary/nirfasteruff.nirfasteruff_cpu.get_field_CW.rst.txt" rel="nofollow"> View page source</a>
@@ -85,7 +107,10 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nirfasteruff.nirfasteruff_cpu.gen_mass_matrix.html" class="btn btn-neutral float-left" title="nirfasteruff.nirfasteruff_cpu.gen_mass_matrix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nirfasteruff.nirfasteruff_cpu.get_field_FD.html" class="btn btn-neutral float-right" title="nirfasteruff.nirfasteruff_cpu.get_field_FD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
