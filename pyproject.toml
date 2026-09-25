@@ -22,9 +22,3 @@ exclude = '''
 
 [tool.setuptools.packages.find]
 where = ["."]
-
-# Ship the compiled parts from the nirfaster-uFF release inside the package (they are
-# stored in Git LFS, see .gitattributes), so a plain `pip install` gets them. The
-# meshers are located next to nirfasteruff_cpu at runtime.
-[tool.setuptools.package-data]
-nirfasteruff = ["*.pyd", "*.dll", "*.exe", "*.so", "*MAC", "*LINUX"]

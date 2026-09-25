@@ -10,6 +10,49 @@ This is a compact (aka micro) version of the NIRFASTer with Python interface, pr
 
 The toolbox can be run on Linux, Mac, and Windows. To use GPU acceleration, you will need to have a Nvidia card with compute capability higer than `sm_50`, i.e. the GTX9xx series.
 
+## Cortivision fork: platform wheels
+
+Our changes live on the `integration` branch (open pull requests against it); `main` mirrors
+[milabuob/nirfaster-uFF](https://github.com/milabuob/nirfaster-uFF) unchanged, so taking a new
+upstream version is always a fast-forward. To sync:
+
+```bash
+git remote add upstream https://github.com/milabuob/nirfaster-uFF.git   # once
+git fetch upstream
+git push origin upstream/main:main                  # main = the original
+git checkout integration && git merge main          # our changes on top; resolve conflicts here
+```
+
+This fork packages nirfasteruff's code together with the compiled parts of the upstream release
+(solver modules, CUDA DLLs, meshers) as one wheel per platform, so a plain `pip install` gets
+everything and nothing has to be unzipped into the package by hand. The wheels are attached to
+the GitHub release [`v1.2.1-wheels`](https://github.com/cortivision/nirfaster-uFF/releases/tag/v1.2.1-wheels):
+
+| Wheel | Platform | Contents |
+|---|---|---|
+| `nirfasteruff-1.2.1-cp313-cp313-win_amd64.whl` | Windows, Python 3.13 | CPU + CUDA solver, meshers |
+| `nirfasteruff-1.2.1-cp312-cp312-macosx_13_0_universal2.whl` | macOS 13+, Python 3.12, Apple Silicon + Intel | CPU solver, meshers |
+
+Depend on them by URL, one line per platform, pinned by hash so pip refuses any other file:
+
+```toml
+"nirfasteruff @ https://github.com/cortivision/nirfaster-uFF/releases/download/v1.2.1-wheels/nirfasteruff-1.2.1-cp313-cp313-win_amd64.whl#sha256=af15446c44d3c56e69a4892fe6749aa61435d36c957fef7417d220a8c739e24d ; sys_platform == 'win32'",
+"nirfasteruff @ https://github.com/cortivision/nirfaster-uFF/releases/download/v1.2.1-wheels/nirfasteruff-1.2.1-cp312-cp312-macosx_13_0_universal2.whl#sha256=2748c5e0a40888125e778250ae22fd0e3f1fd37c7da3bf14d91da53e23cd31cb ; sys_platform == 'darwin'",
+```
+
+To publish wheels for a new upstream release:
+
+1. In `tools/build_wheels.py`, update `RELEASE`, `ZIPS` (the zip names and their SHA-256 from the
+   upstream release page) and, if the platforms change, `WHEELS`. Update the version in
+   `pyproject.toml`.
+2. Run `python tools/build_wheels.py`; the wheels land in `dist/` (gitignored). Every zip is
+   checked against its SHA-256 first.
+3. Install each wheel into a fresh environment on its platform and run `python tools/test_wheel.py`
+   from the repo root. It runs the solvers (and compares GPU with CPU where CUDA exists) and both
+   meshers on the demo data.
+4. Attach the wheels to a new GitHub release, then update the URLs and `#sha256=` hashes in the
+   apps that depend on them.
+
 ## Dependencies
 
 Packages required:

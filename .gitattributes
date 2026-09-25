@@ -1,6 +1,0 @@
-nirfasteruff/*.pyd filter=lfs diff=lfs merge=lfs -text
-nirfasteruff/*.dll filter=lfs diff=lfs merge=lfs -text
-nirfasteruff/*.exe filter=lfs diff=lfs merge=lfs -text
-nirfasteruff/*.so filter=lfs diff=lfs merge=lfs -text
-nirfasteruff/*MAC filter=lfs diff=lfs merge=lfs -text
-nirfasteruff/*LINUX filter=lfs diff=lfs merge=lfs -text
