@@ -12,6 +12,17 @@ The toolbox can be run on Linux, Mac, and Windows. To use GPU acceleration, you 
 
 ## Cortivision fork: platform wheels
 
+Our changes live on the `integration` branch (open pull requests against it); `main` mirrors
+[milabuob/nirfaster-uFF](https://github.com/milabuob/nirfaster-uFF) unchanged, so taking a new
+upstream version is always a fast-forward. To sync:
+
+```bash
+git remote add upstream https://github.com/milabuob/nirfaster-uFF.git   # once
+git fetch upstream
+git push origin upstream/main:main                  # main = the original
+git checkout integration && git merge main          # our changes on top; resolve conflicts here
+```
+
 This fork packages nirfasteruff's code together with the compiled parts of the upstream release
 (solver modules, CUDA DLLs, meshers) as one wheel per platform, so a plain `pip install` gets
 everything and nothing has to be unzipped into the package by hand. The wheels are attached to
